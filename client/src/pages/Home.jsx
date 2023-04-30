@@ -3,7 +3,7 @@ import CreateTodo from '../components/CreateTodo'
 
 const Home = () => {
   return (
-    <div>
+    <div className='container p-5'>
         <CreateTodo />
     </div>
   )
