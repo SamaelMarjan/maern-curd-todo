@@ -16,3 +16,30 @@ code {
   gap: 1rem;
   width: 28rem;
 }
+
+.card {
+  width: 50rem;
+  height: 4rem;
+}
+
+.data {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.task, .button {
+  width: 50%;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+}

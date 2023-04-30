@@ -84,7 +84,10 @@ const CreateTodo = () => {
     <div>
         <Toaster />
         <div className='mb-5'>
-            <button className='btn btn-success' onClick={showModal}>Create</button>
+            <div className='d-flex justify-content-between' style={{width: '59vw'}}>
+                <h4>C_U_R_D</h4>
+                <button className='btn btn-success' onClick={showModal}>Create</button>
+            </div>
             <Modal open={visible} onCancel={hideModal} onOk={() => {selected ? handleEdit() : handleCreate()}}>
                 <TodoInput input={input} setInput={setInput} passTo={handleChange} />
             </Modal>
@@ -93,19 +96,15 @@ const CreateTodo = () => {
         {
             getTodo?.map((task, id) => (
                 <div className='card mb-5' key={id}>
-                    <table>
-                        <tr>
-                            <th>{task.title}</th>
-                        </tr>
-                        <tr>
-                            <td>{task.time}</td>
-                        </tr>
-                        <tr>
-                            <td>{task.task}</td>
+                    <div className='d-flex data'>
+                        <div className='task'>
+                            <p>{task.task}</p>
+                        </div>
+                        <div className='button'>
                             <button className='btn btn-warning me-2' onClick={() => {showModal(); setSelected(task); setInput(task)}}>Edit</button>
                             <button className='btn btn-danger' onClick={() => handleDelete(task._id)}>Delete</button>
-                        </tr>
-                    </table>
+                        </div>
+                    </div>
                 </div>
             ))
         }
