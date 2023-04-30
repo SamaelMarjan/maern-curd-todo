@@ -28,7 +28,7 @@ const CreateTodo = () => {
     //get all todo
     const getAll = async() => {
         try {
-            const {data} = await axios.get('http://localhost:5000/api/todo/get')
+            const {data} = await axios.get('https://mern-basic-todo.onrender.com/api/todo/get')
             console.log(data);
             setGetTodo(data.todo)
             console.log(setGetTodo);
@@ -43,7 +43,7 @@ const CreateTodo = () => {
     //create todo
     const handleCreate = async() => {
         try {
-            const {data} = await axios.post('http://localhost:5000/api/todo/create', input)
+            const {data} = await axios.post('https://mern-basic-todo.onrender.com/api/todo/create', input)
             console.log(data);
             toast.success(data.message)
             getAll()
@@ -56,7 +56,7 @@ const CreateTodo = () => {
     //delete
     const handleDelete = async(id) => {
         try {
-            const {data} = await axios.delete(`http://localhost:5000/api/todo/delete/${id}`)
+            const {data} = await axios.delete(`https://mern-basic-todo.onrender.com/api/todo/delete/${id}`)
             toast.success(data.message)
             getAll()
         } catch (error) {
@@ -67,7 +67,7 @@ const CreateTodo = () => {
     //edit
     const handleEdit = async() => {
         try {
-            const {data} = await axios.put(`http://localhost:5000/api/todo/update/${selected._id}`, input)
+            const {data} = await axios.put(`https://mern-basic-todo.onrender.com/api/todo/update/${selected._id}`, input)
             console.log(data);
             toast.success(data.message)
             getAll()
