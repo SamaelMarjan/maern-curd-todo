@@ -95,7 +95,7 @@ const CreateTodo = () => {
         <div>
         {
             getTodo?.map((task, id) => (
-                <div className='card mb-5' key={id}>
+                <div className='card mb-5' style={{height: '100%'}} key={id}>
                     <div className='d-flex data'>
                         <div className='task'>
                             <p>{task.title}</p>
