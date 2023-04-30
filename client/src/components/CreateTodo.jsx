@@ -98,7 +98,11 @@ const CreateTodo = () => {
                 <div className='card mb-5' key={id}>
                     <div className='d-flex data'>
                         <div className='task'>
+                            <p>{task.title}</p>
                             <p>{task.task}</p>
+                        </div>
+                        <div>
+                            <p>{task.time}</p>
                         </div>
                         <div className='button'>
                             <button className='btn btn-warning me-2' onClick={() => {showModal(); setSelected(task); setInput(task)}}>Edit</button>
