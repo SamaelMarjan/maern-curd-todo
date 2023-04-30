@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
+import toast, {Toaster} from 'react-hot-toast'
+import axios from 'axios'
 
 const GetTodo = () => {
+    const [getTodo, setGetTodo] = useState([])
+    //get all todo
+    const getAll = async() => {
+        try {
+            const {data} = await axios.get('https://mern-basic-todo.onrender.com/api/todo/get')
+            console.log(data);
+        } catch (error) {
+            console.log(error);
+            toast.error('Something wrong')
+        }
+    }
   return (
     <div>
+        <Toaster />
         <div className='card mb-5'>
             <table>
                 <tr>
