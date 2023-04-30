@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import toast, {Toaster} from 'react-hot-toast'
 import axios from 'axios'
 
@@ -14,6 +14,9 @@ const GetTodo = () => {
             toast.error('Something wrong')
         }
     }
+    useEffect(() => {
+        getAll()
+    })
   return (
     <div>
         <Toaster />
